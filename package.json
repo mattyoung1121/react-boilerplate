@@ -19,8 +19,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "run": "yarn webpack serve",
-    "build": "yarn webpack build"
+    "run": "webpack serve",
+    "build": "webpack --mode development"
   },
   "devDependencies": {
     "sass": "^1.56.0",

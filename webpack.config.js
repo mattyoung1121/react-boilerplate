@@ -13,8 +13,18 @@ module.exports = {
         options: { presets: ["@babel/env"] },
       },
       {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        test: /\.s[ac]ss$/i,
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              // prefer `dart-sass`
+              implementation: require.resolve("sass"),
+            },
+          },
+        ],
       },
     ],
   },
