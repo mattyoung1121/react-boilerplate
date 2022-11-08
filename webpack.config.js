@@ -1,5 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: "./src/index.js",
@@ -13,18 +14,8 @@ module.exports = {
         options: { presets: ["@babel/env"] },
       },
       {
-        test: /\.s[ac]ss$/i,
-        use: [
-          "style-loader",
-          "css-loader",
-          {
-            loader: "sass-loader",
-            options: {
-              // prefer `dart-sass`
-              implementation: require.resolve("sass"),
-            },
-          },
-        ],
+        test: /\.scss$/i,
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
     ],
   },
@@ -41,5 +32,8 @@ module.exports = {
     compress: false,
     port: 3000,
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()],
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new MiniCssExtractPlugin(),
+  ],
 };

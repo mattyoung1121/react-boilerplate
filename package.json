@@ -19,10 +19,12 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "run": "webpack serve",
-    "build": "webpack --mode development"
+    "start": "webpack serve",
+    "build:dev": "webpack --mode development",
+    "build:prod": "webpack --mode production"
   },
   "devDependencies": {
+    "mini-css-extract-plugin": "^2.6.1",
     "sass": "^1.56.0",
     "sass-loader": "^13.1.0"
   }
