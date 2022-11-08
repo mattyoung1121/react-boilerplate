@@ -17,5 +17,9 @@
   "name": "react-app-from-scratch",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "run": "yarn webpack serve",
+    "build": "yarn webpack build"
+  }
 }
